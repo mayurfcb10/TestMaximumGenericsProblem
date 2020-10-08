@@ -15,4 +15,14 @@ public class TestMaximum {
 			maximumValue = thirdValue;
 		return maximumValue;
 	}
+
+	/* maximum of 3 Float values at test position */
+	public static Float maximumFloat(Float first, Float second, Float third) {
+		Float maximumValue = first; // first is larger
+		if (second.compareTo(maximumValue) > 0)
+			maximumValue = second; // second is larger
+		if (third.compareTo(maximumValue) > 0)
+			maximumValue = third; // third is larger
+		return maximumValue;
+	}
 }
