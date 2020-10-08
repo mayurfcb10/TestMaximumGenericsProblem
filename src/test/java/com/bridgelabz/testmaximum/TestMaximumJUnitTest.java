@@ -52,4 +52,25 @@ public class TestMaximumJUnitTest {
 		Assert.assertEquals((Float) 12.25f, maximumFloat);
 	}
 
+	/* Maximum String at the position 1 */
+	@Test
+	public void maximumStringAtPosition1() {
+		String maximumString = TestMaximum.maximumString("Peach", "Apple", "Banana");
+		Assert.assertEquals("Peach", maximumString);
+	}
+
+	/* Maximum String at the position 2 */
+	@Test
+	public void maximumStringAtPosition2() {
+		String maximumString = TestMaximum.maximumString("Apple", "Peach", "Banana");
+		Assert.assertEquals("Peach", maximumString);
+	}
+
+	/* Maximum String at the position 3 */
+	@Test
+	public void maximumStringAtPosition3() {
+		String maximumString = TestMaximum.maximumString("Apple", "Banana", "Peach");
+		Assert.assertEquals("Peach", maximumString);
+	}
+
 }

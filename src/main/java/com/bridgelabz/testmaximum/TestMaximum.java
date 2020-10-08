@@ -25,4 +25,14 @@ public class TestMaximum {
 			maximumValue = third; // third is larger
 		return maximumValue;
 	}
+
+	/* maximum of 3 String values at test positions */
+	public static String maximumString(String firstString, String secondString, String thirdString) {
+		String maximum = firstString;
+		if (secondString.compareTo(maximum) > 0)
+			maximum = secondString;
+		if (thirdString.compareTo(maximum) > 0)
+			maximum = thirdString;
+		return maximum;
+	}
 }
