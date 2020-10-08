@@ -27,7 +27,6 @@ public class TestMaximum<T extends Comparable<T>> {
 			maximumValue = secondValue;
 		if (thirdValue.compareTo(maximumValue) > 0)
 			maximumValue = thirdValue;
-		System.out.println("Maximum Value is " + maximumValue);
 		return maximumValue;
 	}
 
@@ -38,7 +37,6 @@ public class TestMaximum<T extends Comparable<T>> {
 			maximumValue = second; // second is larger
 		if (third.compareTo(maximumValue) > 0)
 			maximumValue = third; // third is larger
-		System.out.println("Maximum Value is " + maximumValue);
 		return maximumValue;
 	}
 
@@ -49,7 +47,6 @@ public class TestMaximum<T extends Comparable<T>> {
 			maximum = secondString;
 		if (thirdString.compareTo(maximum) > 0)
 			maximum = thirdString;
-		System.out.println("Maximum Value is " + maximum);
 		return maximum;
 	}
 
@@ -60,12 +57,12 @@ public class TestMaximum<T extends Comparable<T>> {
 			maximumValue = second; // second is larger
 		if (third.compareTo(maximumValue) > 0)
 			maximumValue = third; // third is larger
-		System.out.println("Maximum Value is " + maximumValue);
 		return maximumValue;
 	}
 
 	/* Method return maximum of the 3 values at any position */
 	public T findMaxValueAtAnyPosition() {
+		printMaximumValue(firstValue,secondValue,thirdValue,maximumOfObject(firstValue, secondValue, thirdValue));
 		return TestMaximum.maximumOfObject(firstValue, secondValue, thirdValue);
 	}
 
@@ -73,7 +70,11 @@ public class TestMaximum<T extends Comparable<T>> {
 	public static <T extends Comparable<T>> T maximumOfObject(T... value) {
 		List<T> list = Arrays.asList(value);
 		Collections.sort(list);
-		System.out.println("Maximum Value is " + list.get(list.size() - 1));
 		return list.get(list.size() - 1);
 	}
+	
+	//Method for printing max of three variables of any type
+    public static <T> void printMaximumValue(T firstValue, T secondValue, T thirdValue, T maximumValue) {
+        System.out.println("The maximum of " + firstValue + "," + secondValue + "," + thirdValue + " is " + maximumValue);
+    }
 }
