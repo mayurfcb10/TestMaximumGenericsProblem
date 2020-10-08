@@ -1,5 +1,9 @@
 package com.bridgelabz.testmaximum;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class TestMaximum<T extends Comparable<T>> {
 	T firstValue;
 	T secondValue;
@@ -63,5 +67,13 @@ public class TestMaximum<T extends Comparable<T>> {
 	/* Method return maximum of the 3 values at any position */
 	public T findMaxValueAtAnyPosition() {
 		return TestMaximum.maximumOfObject(firstValue, secondValue, thirdValue);
+	}
+
+	/* maximum of values at test position */
+	public static <T extends Comparable<T>> T maximumOfObject(T... value) {
+		List<T> list = Arrays.asList(value);
+		Collections.sort(list);
+		System.out.println("Maximum Value is " + list.get(list.size() - 1));
+		return list.get(list.size() - 1);
 	}
 }
