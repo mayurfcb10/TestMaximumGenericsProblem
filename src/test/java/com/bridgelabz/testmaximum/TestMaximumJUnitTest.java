@@ -1,12 +1,13 @@
 package com.bridgelabz.testmaximum;
 
 import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class TestMaximumJUnitTest {
 	/* Welcome message test method */
-	@Test
-	public void shouldPrintWelcomeMessage() {
+	@BeforeClass
+	public static void shouldPrintWelcomeMessage() {
 		TestMaximum.printWelcomeMessage();
 	}
 
@@ -20,15 +21,15 @@ public class TestMaximumJUnitTest {
 	/* Maximum Integer element at the position 2 */
 	@Test
 	public void maximumIntegerAtPosition2() {
-		Integer maximumInteger = TestMaximum.maximumInteger(4, 12, 11);
-		Assert.assertSame(12, maximumInteger);
+		Integer maximumInteger = TestMaximum.maximumInteger(4, 15, 11);
+		Assert.assertSame(15, maximumInteger);
 	}
 
 	/* Maximum Integer element at the position 3 */
 	@Test
 	public void maximumIntegerAtPosition3() {
-		Integer maximumInteger = TestMaximum.maximumInteger(4, 11, 12);
-		Assert.assertSame(12, maximumInteger);
+		Integer maximumInteger = TestMaximum.maximumInteger(4, 11, 22);
+		Assert.assertSame(22, maximumInteger);
 	}
 
 	/* Maximum Float element at the position 1 */
@@ -48,8 +49,8 @@ public class TestMaximumJUnitTest {
 	/* Maximum Float element at the position 3 */
 	@Test
 	public void maximumFloatAtPosition3() {
-		Float maximumFloat = TestMaximum.maximumFloat(4.46f, 11.0f, 12.25f);
-		Assert.assertEquals((Float) 12.25f, maximumFloat);
+		Float maximumFloat = TestMaximum.maximumFloat(4.46f, 11.0f, 13.25f);
+		Assert.assertEquals((Float) 13.25f, maximumFloat);
 	}
 
 	/* Maximum String at the position 1 */
@@ -94,4 +95,24 @@ public class TestMaximumJUnitTest {
 		Assert.assertEquals((String) "Sogeti", maximumObject);
 	}
 
+	/* Maximum Integer among the given Generic set */
+	@Test
+	public void given_Generic_IntegerValues_returns_true() {
+		Integer maxValueInteger = new TestMaximum<Integer>(6, 7, 8).findMaxValueAtAnyPosition();
+		Assert.assertEquals((Integer) 8, maxValueInteger);
+	}
+
+	/* Maximum Float among the given Generic set */
+	@Test
+	public void given_Generic_FloatValues_returns_true() {
+		Float maxValueFloat = new TestMaximum<Float>(6.9f, 9.9f, 8.0f).findMaxValueAtAnyPosition();
+		Assert.assertEquals((Float) 9.9f, maxValueFloat);
+	}
+
+	/* Maximum String among the given Generic set */
+	@Test
+	public void given_Generic_StringValues_returns_true() {
+		String maxValueString = new TestMaximum<String>("Yahoo", "Google", "Microsoft").findMaxValueAtAnyPosition();
+		Assert.assertEquals((String) "Yahoo", maxValueString);
+	}
 }
